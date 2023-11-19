@@ -11,7 +11,7 @@ const Product: React.FC<ProductI> = ({
 }) => {
   return (
     <div className={classes.box}>
-      <input type='checkbox' checked={checked} />
+      <input type='checkbox' checked={checked} className='delete-checkbox' />
       <h4>{SKU}</h4>
       <h4>{name}</h4>
       <p>

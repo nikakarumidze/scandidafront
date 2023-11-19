@@ -1,9 +1,13 @@
 import Product from '../components/Product';
+import classes from './Products.module.scss';
+
+// const allProducts =
 
 const Products = () => {
   return (
-    <div>
+    <div className={classes.grid}>
       <Product
+        key={'sku'}
         SKU={'sku'}
         checked={false}
         name={'s'}
