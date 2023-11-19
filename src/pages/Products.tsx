@@ -1,19 +1,25 @@
 import Product from '../components/Product';
 import classes from './Products.module.scss';
-
-// const allProducts =
+import type { RootState } from '../store';
+import { useSelector } from 'react-redux';
 
 const Products = () => {
+  const products = useSelector((state: RootState) => state.products);
+  console.log(products);
+  console.log('zd')
+
   return (
     <div className={classes.grid}>
-      <Product
-        key={'sku'}
-        SKU={'sku'}
-        checked={false}
-        name={'s'}
-        price={5}
-        dimentionType={0}
+      {products.map((product) => (
+        <Product
+        key={product.sku}
+        sku={product.sku}
+        name={product.name}
+        price={product.price}
+        product_type={product.product_type}
       />
+      ))}
+      
     </div>
   );
 };

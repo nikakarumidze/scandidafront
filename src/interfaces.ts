@@ -1,7 +1,7 @@
 export interface ProductI {
-  SKU: string;
-  checked: boolean;
+  sku: string;
   name: string;
   price: number;
-  dimentionType: number;
+  product_type: string;
+  attributes?: string;
 }

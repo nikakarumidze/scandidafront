@@ -9,19 +9,21 @@ import axios from 'axios';
 
 const App: React.FC = () => {
   const dispatch = useDispatch();
+
   useEffect(() => {
     axios
-      .get('localhost')
-      .then((res) => dispatch(addProducts(res as any)))
-      .catch(() => alert('error while fetching data'));
+      .get('http://localhost/product')
+      .then((res) => dispatch(addProducts(res.data)))
+      .catch((err) => console.log(err, 'error while fetching data'));
   }, []);
+
   return (
     <>
       <Header />
       <Routes>
         <Route path='/products' index element={<Products />} />
         <Route path='/addproduct' element={<AddProduct />} />
-        <Route path='*' element={<Navigate to='/products' />} />
+        <Route path='*' element={<Navigate to='/' />} />
       </Routes>
     </>
   );

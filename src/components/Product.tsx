@@ -3,22 +3,21 @@ import classes from './Product.module.scss';
 import { ProductI } from '../interfaces';
 
 const Product: React.FC<ProductI> = ({
-  SKU,
-  checked,
+  sku,
   name,
   price,
-  dimentionType,
+  product_type,
 }) => {
   return (
     <div className={classes.box}>
-      <input type='checkbox' checked={checked} className='delete-checkbox' />
-      <h4>{SKU}</h4>
+      <input type='checkbox' checked={false} className='delete-checkbox' />
+      <h4>{sku}</h4>
       <h4>{name}</h4>
       <p>
         {price}
         <span> $</span>
       </p>
-      <p>{dimentionType}</p>
+      <p>{product_type}</p>
     </div>
   );
 };
