@@ -7,13 +7,10 @@ export const productsSlice = createSlice({
   name: 'products',
   initialState,
   reducers: {
-    addProducts: (state: ProductI[], action: PayloadAction<ProductI[]>) => {
-      state = state.concat(action.payload);
-      console.log(state);
-    },
-    removeProducts: (state: ProductI[], action: PayloadAction<Set<string>>) => {
-      state = state.filter((item) => item.sku )
-    },
+    addProducts: (state: ProductI[], action: PayloadAction<ProductI[]>) =>
+      (state = state.concat(action.payload)),
+    removeProducts: (state: ProductI[], action: PayloadAction<Array<string>>) =>
+      (state = state.filter((item) => !action.payload.includes(item.sku))),
   },
 });
 
