@@ -11,7 +11,9 @@ export const productsSlice = createSlice({
       (state = state.concat(action.payload)),
     removeProducts: (state: ProductI[], action: PayloadAction<Array<string>>) =>
       (state = state.filter((item) => !action.payload.includes(item.sku))),
+    clearProducts: (state) => (state = []),
   },
 });
 
-export const { addProducts, removeProducts } = productsSlice.actions;
+export const { addProducts, removeProducts, clearProducts } =
+  productsSlice.actions;

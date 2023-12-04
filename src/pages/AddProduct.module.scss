@@ -1,0 +1,16 @@
+.form {
+  width: 40%;
+
+  div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+  .buttons {
+    justify-content: end;
+    * {
+      margin: 5px 10px;
+    }
+  }
+}
