@@ -18,7 +18,7 @@ const ProductsDelete = () => {
 
     // Send a delete request to the server
     axios
-      .delete(process.env.SERVER_ADDRESS as string, {
+      .delete(process.env.REACT_APP_SERVER_ADDRESS, {
         data: { SKUArr: productsToDelete },
       })
       .then((res) => {

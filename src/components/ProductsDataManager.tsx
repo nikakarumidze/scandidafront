@@ -12,7 +12,7 @@ const ProductsDataManager: React.FC<ProductsDataManagerProps> = memo(
 
     useEffect(() => {
       axios
-        .get(process.env.SERVER_ADDRESS as string)
+        .get(process.env.REACT_APP_SERVER_ADDRESS)
         .then((res) => dispatch(addProducts(res.data)))
         .catch((err) => console.error(err, 'Error while fetching data'));
     }, []); // The empty dependency array ensures that this effect runs only on component mount

@@ -12,7 +12,7 @@ export const submitFormHandler = (
   form.delete('productType');
 
   axios
-    .post(process.env.SERVER_ADDRESS as string, form)
+    .post(process.env.REACT_APP_SERVER_ADDRESS, form)
     .then((res) => res.status === 200 && redirect('/'))
     .catch((err) => console.log(err.response.data));
 };
