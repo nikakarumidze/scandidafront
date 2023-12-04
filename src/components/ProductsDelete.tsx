@@ -1,4 +1,3 @@
-import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../store';
 import { removeProductsClear } from '../store/removeProductsSlice';
@@ -6,29 +5,36 @@ import { removeProducts } from '../store/productSlice';
 import axios from 'axios';
 
 const ProductsDelete = () => {
-  const ProductsDelete = useSelector(
+  // Select the removeProducts array from the Redux store
+  const productsToDelete = useSelector(
     (state: RootState) => state.removeProducts
   );
   const dispatch = useDispatch();
 
-  const ProductsDeleteHandler = () => {
-    // If array is empty, do not send request.
-    if (!ProductsDelete.length) return;
+  // Handler function for deleting selected products
+  const productsDeleteHandler = () => {
+    // If the array is empty, do not send the delete request
+    if (!productsToDelete.length) return;
 
+    // Send a delete request to the server
     axios
       .delete(process.env.SERVER_ADDRESS as string, {
-        data: { SKUArr: ProductsDelete },
+        data: { SKUArr: productsToDelete },
       })
       .then((res) => {
-        if (!res) throw Error();
-        dispatch(removeProducts(ProductsDelete));
-        dispatch(removeProductsClear());
+        // If the delete request is successful, dispatch actions to update the store
+        if (res) {
+          dispatch(removeProducts(productsToDelete));
+          dispatch(removeProductsClear());
+        } else {
+          throw new Error('Delete request failed');
+        }
       })
-      .catch((err) => console.log(err, 'please try again'));
+      .catch((err) => console.error(err, 'Please try again'));
   };
 
   return (
-    <button id='delete-product-btn' onClick={ProductsDeleteHandler}>
+    <button id='delete-product-btn' onClick={productsDeleteHandler}>
       MASS DELETE
     </button>
   );

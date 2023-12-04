@@ -6,6 +6,7 @@ import ProductsDelete from './ProductsDelete';
 const Header = () => {
   const location = useLocation();
   const isAddproductPage = location.pathname === '/addproduct';
+
   return (
     <header className={classes.header}>
       <h1>

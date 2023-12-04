@@ -2,7 +2,6 @@ import { useEffect, memo } from 'react';
 import { useDispatch } from 'react-redux';
 import { addProducts } from '../store/productSlice';
 import axios from 'axios';
-
 interface ProductsDataManagerProps {
   children: React.ReactNode;
 }
@@ -15,8 +14,8 @@ const ProductsDataManager: React.FC<ProductsDataManagerProps> = memo(
       axios
         .get(process.env.SERVER_ADDRESS as string)
         .then((res) => dispatch(addProducts(res.data)))
-        .catch((err) => console.log(err, 'error while fetching data'));
-    }, []);
+        .catch((err) => console.error(err, 'Error while fetching data'));
+    }, []); // The empty dependency array ensures that this effect runs only on component mount
 
     return <>{children}</>;
   }

@@ -10,7 +10,7 @@ export const submitFormHandler = (
   const productType = form.get('productType');
   productType !== null && form.set('product_type', productType);
   form.delete('productType');
-  console.log(process.env.PUBLIC_URL);
+
   axios
     .post(process.env.SERVER_ADDRESS as string, form)
     .then((res) => res.status === 200 && redirect('/'))

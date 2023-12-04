@@ -17,23 +17,29 @@ const Product: React.FC<ComponentProductI> = ({ props }) => {
     (state: RootState) => state.removeProducts
   );
   const dispatch = useDispatch();
+
+  // Check if the current product is selected for removal
   const checked = removeProducts.includes(props.sku);
+  // Determine the array of attributes based on the product type
   const attributesArray = DBattributes[props.product_type];
 
-  // Attribute assigment logic
+  // Attribute assignment logic
   let attribute = props[attributesArray[0]];
   if (attributesArray.length === 3) {
     attribute +=
       'x' + props[attributesArray[1]] + 'x' + props[attributesArray[2]];
   }
 
+  // Handler for checkbox state changes
   const checkboxHandler = () => {
+    // Toggle the removal status of the current product
     if (checked) {
       dispatch(removeProductsDelete(props.sku));
     } else {
       dispatch(removeProductsAdd(props.sku));
     }
   };
+
   return (
     <div className={classes.box}>
       <input
