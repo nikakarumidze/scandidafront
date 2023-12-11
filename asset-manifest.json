@@ -1,0 +1,12 @@
+{
+  "files": {
+    "main.css": "/scandidafront/static/css/main.5b544625.css",
+    "main.js": "/scandidafront/static/js/main.f1c1db70.js",
+    "static/js/27.4b46bc19.chunk.js": "/scandidafront/static/js/27.4b46bc19.chunk.js",
+    "index.html": "/scandidafront/index.html"
+  },
+  "entrypoints": [
+    "static/css/main.5b544625.css",
+    "static/js/main.f1c1db70.js"
+  ]
+}
