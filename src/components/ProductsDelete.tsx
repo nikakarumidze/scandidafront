@@ -34,7 +34,11 @@ const ProductsDelete = () => {
   };
 
   return (
-    <button id='delete-product-btn' onClick={productsDeleteHandler}>
+    <button
+      id='delete-product-btn'
+      onClick={productsDeleteHandler}
+      value='MASS DELETE'
+    >
       MASS DELETE
     </button>
   );

@@ -15,9 +15,9 @@ const Header = () => {
       <div>
         {!isAddproductPage && (
           <>
-            <button>
-              <Link to='/addproduct'>ADD</Link>
-            </button>
+            <Link to='/addproduct'>
+              <button value='ADD'>ADD</button>
+            </Link>
             <ProductsDelete />
           </>
         )}
