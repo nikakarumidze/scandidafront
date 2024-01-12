@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.css": "/static/css/main.5b544625.css",
-    "main.js": "/static/js/main.db3ac622.js",
-    "static/js/27.4b46bc19.chunk.js": "/static/js/27.4b46bc19.chunk.js",
-    "index.html": "/index.html"
+    "main.css": "/scandidafront/static/css/main.5b544625.css",
+    "main.js": "/scandidafront/static/js/main.131dd861.js",
+    "static/js/27.4b46bc19.chunk.js": "/scandidafront/static/js/27.4b46bc19.chunk.js",
+    "index.html": "/scandidafront/index.html"
   },
   "entrypoints": [
     "static/css/main.5b544625.css",
-    "static/js/main.db3ac622.js"
+    "static/js/main.131dd861.js"
   ]
 }
